@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADAR AI - SAR Image Colorization</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Loader Section -->
+    <div id="loader" class="loader-container" style="display: none;" aria-live="polite">
+        <div class="planet">
+            <div class="satellite">
+                <div class="antenna"></div>
+            </div>
+        </div>
+        <div class="loading-text">Processing Satellite Data...</div>
+    </div>
+
+    <!-- Video Background -->
+    <video class="video-background" id="background-video" autoplay muted loop>
+        <source src="\static\videos\Earth_rotate.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>
+            <img src="/static/images/logo.jpeg" alt="RADAR AI Logo"> RADAR AI
+        </h1>
+        <div>
+            <a href="#colorize-section">Colorize</a>
+            <a href="#about-us-section">About Us</a>
+            <a href="#analytics-section">Analytics</a>
+        </div>
+    </nav>
+
+    <!-- Colorize Section -->
+    <section id="colorize-section" class="container">
+        <h2>Image Colorization</h2>
+        <form id="colorize-form" enctype="multipart/form-data">
+            <div style="margin: 20px 0;">
+                <input id="file-input" type="file" name="image" accept="image/*" required>
+                <button id="colorizeBtn" type="submit" class="upload-btn">Upload and Colorize</button>
+            </div>
+        </form>
+
+        <!-- Image Preview Section -->
+        <div class="preview-section">
+            <h3>Image Preview</h3>
+            <div class="preview-container">
+                <div class="image-wrapper">
+                    <h4>Original Image</h4>
+                    <img id="preview-image" class="image-preview" src="" alt="Original Image Preview" style="display: none;">
+                </div>
+                <div class="image-wrapper">
+                    <h4>Colorized Image</h4>
+                    <img id="colorized-image" class="image-preview" src="" alt="Colorized Image Preview" style="display: none;">
+                    <p id="colorize-message" style="display: none; margin-top: 10px;">Image colorized successfully!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us-section" class="container">
+        <h2>About Us</h2>
+        <p>
+            Welcome to RADAR AI! Our mission is to revolutionize SAR image processing using cutting-edge AI technology. 
+            We specialize in colorizing and analyzing SAR images for diverse applications, including environmental monitoring, 
+            urban planning, and disaster management.
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2024 RADAR AI | All Rights Reserved
+    </footer>
+
+    <!-- Link to external JavaScript -->
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>
